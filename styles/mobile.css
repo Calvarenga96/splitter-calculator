@@ -1,0 +1,296 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+
+:root {
+  --color-primary: hsl(172, 67%, 45%);
+  --color-dark: hsl(183, 100%, 15%);
+
+  --color-background: hsl(185, 41%, 84%);
+
+  --color-dark-grayish-cyan: hsl(186, 14%, 43%);
+  --color-dark-grayish-cyan-two: hsl(184, 14%, 56%);
+  --color-light-grayish-cyan: hsl(185, 41%, 84%);
+  --color-light-grayish-cyan-two: hsl(189, 41%, 97%);
+  --color-white: hsl(0, 0%, 100%);
+
+  --font-size: 2.4rem;
+  --font-family: "Space Mono", monospace;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+}
+
+* {
+  font-size: 62.5%;
+  font-family: var(--font-family);
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+}
+
+section {
+  margin: 20px 0;
+}
+
+.background {
+  background-color: var(--color-background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.background .title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px 0;
+}
+
+.background .title span {
+  font-size: var(--font-size);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-dark-grayish-cyan);
+  letter-spacing: 1rem;
+}
+
+.calculator {
+  background-color: var(--color-white);
+  width: 100%;
+  height: 100%;
+  padding: 20px 35px;
+  box-sizing: border-box;
+  border-radius: 15px 15px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.data-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.result-container {
+  width: 100%;
+}
+
+/* INPUT SECTION */
+.calculator__bill {
+  width: 100%;
+}
+
+.calculator__bill-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.calculator__bill label {
+  font-size: 1.3rem;
+  font-weight: var(--font-weight-bold);
+  margin: 0;
+  color: var(--color-dark-grayish-cyan);
+}
+
+.input-container__bill {
+  width: 100%;
+  height: 45px;
+  margin-top: 15px;
+  height: max-content;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: var(--color-light-grayish-cyan-two);
+  border-radius: 5px;
+}
+
+.dollar-icon {
+  width: 5%;
+  height: 45px;
+  background-image: url("../assets/images/icon-dollar.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding-left: 40px;
+}
+
+.input-container__numbers {
+  width: 100%;
+  height: 45px;
+  background-color: var(--color-light-grayish-cyan-two);
+  border: none;
+  border-radius: 5px;
+  font-size: var(--font-size);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-dark);
+  text-align: end;
+  padding-right: 20px;
+}
+
+.input-container__numbers:focus {
+  outline: none;
+}
+/* INPUT SECTION */
+
+/* TIP SECTION */
+.calculator__tip {
+  width: 100%;
+}
+
+.calculator__tip label {
+  font-size: 1.3rem;
+  font-weight: var(--font-weight-bold);
+  margin: 0;
+  margin-bottom: 15px;
+  color: var(--color-dark-grayish-cyan);
+}
+
+.calculator__tip-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 15px auto 0 auto;
+  gap: 15px;
+}
+
+.calculator__tip-buttons input,
+.calculator__tip-buttons button {
+  width: 100%;
+  height: 45px;
+  padding: 0;
+  margin: 0 auto;
+  font-size: var(--font-size);
+  color: var(--color-white);
+  background-color: var(--color-dark);
+  border: none;
+  border-radius: 10px;
+}
+
+.calculator__tip-buttons input {
+  background-color: var(--color-light-grayish-cyan-two);
+  color: var(--color-dark-grayish-cyan);
+  font-weight: var(--font-weight-bold);
+  text-align: right;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+.calculator__tip-buttons input:focus {
+  outline: none;
+}
+/*TIP SECTION */
+
+/* PEOPLE SECTION */
+.calculator__people {
+  width: 100%;
+}
+
+.calculator__people label {
+  font-size: 1.3rem;
+  font-weight: var(--font-weight-bold);
+  margin: 0;
+  margin-bottom: 15px;
+  color: var(--color-dark-grayish-cyan);
+}
+
+.input-container__people {
+  width: 100%;
+  height: 45px;
+  margin-top: 15px;
+  height: max-content;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: var(--color-light-grayish-cyan-two);
+  border-radius: 5px;
+}
+
+.people-icon {
+  width: 5%;
+  height: 45px;
+  background-image: url("../assets/images/icon-person.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding-left: 40px;
+}
+
+.inputContainer__people {
+  width: 95%;
+  height: 45px;
+  background-color: var(--color-light-grayish-cyan-two);
+  border: none;
+  border-radius: 5px;
+  font-size: var(--font-size);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-dark);
+  text-align: end;
+  padding-right: 20px;
+}
+
+.inputContainer__people:focus {
+  outline: none;
+}
+/* PEOPLE SECTION */
+
+/* RESULT SECTION */
+.calculator__result {
+  width: 100%;
+  background-color: var(--color-dark);
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 30px 20px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.tip,
+.total {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.tip__text-section p,
+.total__text-section p {
+  font-size: 1.4rem;
+}
+
+.tip-amount-text,
+.total-text {
+  color: var(--color-white);
+  font-weight: var(--font-weight-bold);
+  margin: 0;
+}
+
+.person {
+  color: var(--color-dark-grayish-cyan-two);
+  font-weight: var(--font-weight-bold);
+  margin: 5px 0 0;
+}
+
+.calculator__result button {
+  height: 45px;
+  color: var(--color-dark);
+  background-color: var(--color-primary);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight-bold);
+  border: none;
+  border-radius: 5px;
+}
+
+.calculator__result button:focus {
+  outline: none;
+  background-color: var(--color-primary);
+}
+
+.mount-person,
+.mount-total {
+  font-size: 2.8rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+}
+/* RESULT SECTION */
