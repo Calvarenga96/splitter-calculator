@@ -154,8 +154,7 @@ section {
   gap: 15px;
 }
 
-.calculator__tip-buttons input,
-.calculator__tip-buttons button {
+.calculator__tip-buttons input {
   width: 100%;
   height: 45px;
   padding: 0;
@@ -272,7 +271,40 @@ section {
   margin: 5px 0 0;
 }
 
-.calculator__result button {
+.mount-person,
+.mount-total {
+  font-size: 2.8rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+}
+/* RESULT SECTION */
+
+/* BUTTONS STATE SECTION */
+.tip-button-normal-state {
+  width: 100%;
+  height: 45px;
+  padding: 0;
+  margin: 0 auto;
+  font-size: var(--font-size);
+  color: var(--color-white);
+  background-color: var(--color-dark);
+  border: none;
+  border-radius: 10px;
+}
+
+.tip-button-clicked-state {
+  width: 100%;
+  height: 45px;
+  padding: 0;
+  margin: 0 auto;
+  font-size: var(--font-size);
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: 10px;
+}
+
+.reset-button-normal-state {
   height: 45px;
   color: var(--color-dark);
   background-color: var(--color-primary);
@@ -282,15 +314,23 @@ section {
   border-radius: 5px;
 }
 
-.calculator__result button:focus {
+.reset-button-normal-state:focus {
   outline: none;
   background-color: var(--color-primary);
 }
 
-.mount-person,
-.mount-total {
-  font-size: 2.8rem;
+.reset-button-clicked-state {
+  height: 45px;
+  color: var(--color-dark);
+  background-color: var(--color-background);
+  font-size: var(--font-size);
   font-weight: var(--font-weight-bold);
-  color: var(--color-primary);
+  border: none;
+  border-radius: 5px;
 }
-/* RESULT SECTION */
+
+.reset-button-clicked-state:focus {
+  outline: none;
+  background-color: var(--color-background);
+}
+/* BUTTONS STATE SECTION */

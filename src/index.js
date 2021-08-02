@@ -16,18 +16,25 @@ const calculatorButtons = [
 ];
 
 calculatorButtons.forEach((button) => {
-  if (button != reset) {
-    button.onclick = () => {
-      buttonState(button);
-    };
-  }
+  normalState(button);
+
+  button.addEventListener("click", () => {
+    onClickState(button);
+  });
 });
 
-const onClickStatePorcentageButton = (button) =>
-  (button.style.backgroundColor = "var(--color-primary)");
+function normalState(button) {
+  button !== reset
+    ? (button.className = "tip-button-normal-state")
+    : (button.className = "reset-button-normal-state");
+}
 
-function buttonState(button) {
-  if (button.onclick) {
-    onClickStatePorcentageButton(button);
-  }
+function onClickState(button) {
+  calculatorButtons.forEach((buttonToNormalState) =>
+    normalState(buttonToNormalState)
+  );
+
+  button !== reset
+    ? (button.className = "tip-button-clicked-state")
+    : (button.className = "reset-button-clicked-state");
 }
