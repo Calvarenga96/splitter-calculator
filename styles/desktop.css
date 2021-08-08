@@ -64,6 +64,10 @@
   padding-right: 10px;
 }
 
+.no-zero {
+  font-size: 1.5rem;
+}
+
 .calculator__tip-buttons {
   grid-template-columns: repeat(3, 1fr);
 }

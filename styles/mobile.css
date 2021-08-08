@@ -185,18 +185,28 @@ section {
   width: 100%;
 }
 
+.people-text {
+  display: flex;
+  justify-content: space-between;
+}
+
+.no-zero {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ff3535;
+}
+
 .calculator__people label {
   font-size: 1.3rem;
   font-weight: var(--font-weight-bold);
   margin: 0;
-  margin-bottom: 15px;
   color: var(--color-dark-grayish-cyan);
 }
 
 .input-container__people {
   width: 100%;
   height: 45px;
-  margin-top: 15px;
+  margin-top: 5px;
   height: max-content;
   display: flex;
   justify-content: flex-end;
@@ -210,7 +220,7 @@ section {
   height: 45px;
   background-image: url("../assets/images/icon-person.svg");
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center;
   padding-left: 40px;
 }
 
@@ -332,5 +342,12 @@ section {
 .reset-button-clicked-state:focus {
   outline: none;
   background-color: var(--color-background);
+}
+
+.tip-button-normal-state:hover,
+.tip-button-clicked-state:hover,
+.reset-button-normal-state:hover,
+.reset-button-clicked-state:hover {
+  cursor: pointer;
 }
 /* BUTTONS STATE SECTION */

@@ -35,6 +35,7 @@
                   class="input-container__numbers"
                   type="number"
                   id="bill"
+                  name="bill"
                   placeholder="0"
                   ;
                 />
@@ -52,13 +53,17 @@
               <input
                 class="custom"
                 type="number"
-                placeholder="Custom"
                 id="custom"
+                name="custom"
+                placeholder="Custom"
               />
             </div>
           </section>
           <section class="calculator__people">
-            <label for="people">Number of People</label>
+            <div class="people-text" id="people-text-section">
+              <label for="people">Number of People</label>
+              <span class="no-zero">Can't be zero</span>
+            </div>
             <div class="input-container__people">
               <div class="people-icon"></div>
               <input

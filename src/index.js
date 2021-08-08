@@ -1,9 +1,12 @@
+import { normalState, onClickState } from "./buttonsStates.js";
+import Tip from "./Tip.js";
+
 const button5 = document.querySelector("#button-5");
 const button10 = document.querySelector("#button-10");
 const button15 = document.querySelector("#button-15");
 const button25 = document.querySelector("#button-25");
 const button50 = document.querySelector("#button-50");
-const custom = document.querySelector("#custom");
+const custom = document.querySelector("#custom").value;
 const reset = document.querySelector("#reset");
 
 const calculatorButtons = [
@@ -19,22 +22,30 @@ calculatorButtons.forEach((button) => {
   normalState(button);
 
   button.addEventListener("click", () => {
-    onClickState(button);
+    onClickState(button, calculatorButtons);
+  });
+
+  button.addEventListener("click", () => {
+    const bill = parseInt(document.querySelector("#bill").value);
+    switch (button) {
+      case button5:
+        button.value = 5;
+        button = new Tip(button.value, bill);
+        const calculate = button.calculateTip();
+        alert(calculate);
+        break;
+      case button10:
+        button.value = 10;
+        break;
+      case button15:
+        button.value = 15;
+        break;
+      case button25:
+        button.value = 25;
+        break;
+      case button50:
+        button.value = 50;
+        break;
+    }
   });
 });
-
-function normalState(button) {
-  button !== reset
-    ? (button.className = "tip-button-normal-state")
-    : (button.className = "reset-button-normal-state");
-}
-
-function onClickState(button) {
-  calculatorButtons.forEach((buttonToNormalState) =>
-    normalState(buttonToNormalState)
-  );
-
-  button !== reset
-    ? (button.className = "tip-button-clicked-state")
-    : (button.className = "reset-button-clicked-state");
-}
