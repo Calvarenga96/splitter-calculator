@@ -1,17 +1,22 @@
 class Tip {
-  constructor(value, bill) {
+  constructor(value, bill, people) {
     this.value = value;
     this.bill = bill;
+    this.people = people;
   }
 
-  calculateTip() {
-    // eliminar los parentesis que genera eslint para poder hacer los calculos correctos o salen mal
-    const calculate = (porcentage * this.bill) / 100;
-    return calculate;
+  initCalculator() {
+    const calculation = this._calculateTip();
+    return calculation;
   }
 
-  porcentage() {
-    return this.value + 100;
+  _calculateTip() {
+    const totalPorcentage = 100;
+    const tipPorcentage = this.value;
+    const totalToPay = this.bill;
+    const numberOfPeople = this.people;
+
+    return (((totalPorcentage + tipPorcentage) * totalToPay) / totalPorcentage) / numberOfPeople;
   }
 }
 

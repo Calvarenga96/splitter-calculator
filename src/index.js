@@ -6,7 +6,7 @@ const button10 = document.querySelector("#button-10");
 const button15 = document.querySelector("#button-15");
 const button25 = document.querySelector("#button-25");
 const button50 = document.querySelector("#button-50");
-const custom = document.querySelector("#custom").value;
+const custom = Number(document.querySelector("#custom").value);
 const reset = document.querySelector("#reset");
 
 const calculatorButtons = [
@@ -23,28 +23,35 @@ calculatorButtons.forEach((button) => {
 
   button.addEventListener("click", () => {
     onClickState(button, calculatorButtons);
-  });
 
-  button.addEventListener("click", () => {
-    const bill = parseInt(document.querySelector("#bill").value);
+    const people = Number(document.querySelector("#people").value);
+    const bill = Number(document.querySelector("#bill").value);
+    console.log(typeof bill)
     switch (button) {
       case button5:
-        button.value = 5;
-        button = new Tip(button.value, bill);
-        const calculate = button.calculateTip();
-        alert(calculate);
+        const button5Value = 5;
+        button = new Tip(button5Value, bill, people);
+        alert(button.initCalculator());
         break;
       case button10:
-        button.value = 10;
+        const button10Value = 10;
+        button = new Tip(button10Value, bill, people);
+        alert(button.initCalculator());
         break;
       case button15:
-        button.value = 15;
+        const button15Value = 15;
+        button = new Tip(button15Value, bill, people);
+        alert(button.initCalculator());
         break;
       case button25:
-        button.value = 25;
+        const button25Value = 25;
+        button = new Tip(button25Value, bill, people);
+        alert(button.initCalculator());
         break;
       case button50:
-        button.value = 50;
+        const button50Value = 50;
+        button = new Tip(button50Value, bill, people);
+        alert(button.initCalculator());
         break;
     }
   });
