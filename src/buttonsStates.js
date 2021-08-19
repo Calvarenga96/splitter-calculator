@@ -1,4 +1,4 @@
-import { tipButtons } from "./index.mjs";
+import { tipButtons } from "./index.js";
 
 function buttonNormalState(button) {
 	button.className = "tip-button-normal-state";

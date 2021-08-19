@@ -1,10 +1,11 @@
-import { buttonNormalState, buttonClickedState } from "./buttonsStates.mjs";
+import { buttonNormalState, buttonClickedState } from "./buttonsStates.js";
 import {
 	billValue,
 	customValue,
 	numberOfPeopleValue,
 	tipValues,
-} from "./values.mjs";
+} from "./values.js";
+import Calculator from "./Calculator.js";
 
 const button5 = document.querySelector("#button-5");
 const button10 = document.querySelector("#button-10");
@@ -13,14 +14,19 @@ const button25 = document.querySelector("#button-25");
 const button50 = document.querySelector("#button-50");
 const resetButton = document.querySelector("#reset");
 
-export const tipButtons = [button5, button10, button15, button25, button50];
+const tipButtons = [button5, button10, button15, button25, button50];
 
 // TIP BUTTONS SECTION
 tipButtons.forEach((tipButton) => {
+	// Initialize the default styles of the buttons
 	buttonNormalState(tipButton);
 
 	tipButton.addEventListener("click", () => {
+		// Changes the styles of the pressed button
 		buttonClickedState(tipButton);
+
+		// TIP BUTTONS VALUES (I EXTRACT THE CUSTOM VALUE AND NUMBER OF PEOPLE IN THE VALUES.JS FILE)
+		tipValues(tipButton);
 	});
 });
 
@@ -34,3 +40,14 @@ resetButton.addEventListener("click", () => {
 		resetButton.className = "reset-button-normal-state";
 	}, 30);
 });
+
+// I INITIALIZE THE CALCULATOR
+const calculator = new Calculator(
+	tipButtons,
+	customValue,
+	billValue,
+	numberOfPeopleValue
+);
+console.log(calculator);
+
+export { tipButtons };
