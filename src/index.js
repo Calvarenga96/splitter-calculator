@@ -1,11 +1,10 @@
 import { buttonNormalState, buttonClickedState } from "./buttonsStates.js";
 import {
 	billValue,
-	customValue,
+	customTipValue,
 	numberOfPeopleValue,
 	tipValues,
 } from "./values.js";
-import Calculator from "./Calculator.js";
 
 const button5 = document.querySelector("#button-5");
 const button10 = document.querySelector("#button-10");
@@ -40,14 +39,5 @@ resetButton.addEventListener("click", () => {
 		resetButton.className = "reset-button-normal-state";
 	}, 30);
 });
-
-// I INITIALIZE THE CALCULATOR
-const calculator = new Calculator(
-	tipButtons,
-	customValue,
-	billValue,
-	numberOfPeopleValue
-);
-console.log(calculator);
 
 export { tipButtons };
