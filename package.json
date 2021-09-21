@@ -1,0 +1,35 @@
+{
+  "name": "tip-calculator-app-main",
+  "version": "1.0.0",
+  "description": "This project is based on making a minimalist calculator to calculate the price according to the percentage of tip that must be paid.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Calvarenga96/splitter-calculator.git"
+  },
+  "keywords": [],
+  "author": "Christian Alvarenga <christianalvarenga201014@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Calvarenga96/splitter-calculator/issues"
+  },
+  "homepage": "https://github.com/Calvarenga96/splitter-calculator#readme",
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@babel/preset-env": "^7.15.6",
+    "babel-loader": "^8.2.2",
+    "copy-webpack-plugin": "^9.0.1",
+    "css-loader": "^6.3.0",
+    "css-minimizer-webpack-plugin": "^3.0.2",
+    "html-webpack-plugin": "^5.3.2",
+    "mini-css-extract-plugin": "^2.3.0",
+    "terser-webpack-plugin": "^5.2.4",
+    "webpack": "^5.53.0",
+    "webpack-cli": "^4.8.0"
+  }
+}

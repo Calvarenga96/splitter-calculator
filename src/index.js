@@ -1,7 +1,5 @@
 import { buttonNormalState, buttonClickedState } from "./buttonsStates.js";
-import { tipValues, calculator } from "./values.js";
-
-const viewPort = document.querySelector(".calculator");
+import { getValues } from "./values.js";
 
 const button5 = document.querySelector("#button-5");
 const button10 = document.querySelector("#button-10");
@@ -10,7 +8,16 @@ const button25 = document.querySelector("#button-25");
 const button50 = document.querySelector("#button-50");
 const resetButton = document.querySelector("#reset");
 
-export const tipButtons = [button5, button10, button15, button25, button50];
+const people = document.querySelector("#people");
+
+export const tipButtons = [
+	button5,
+	button10,
+	button15,
+	button25,
+	button25,
+	button50,
+];
 
 // TIP BUTTONS SECTION
 tipButtons.forEach((tipButton) => {
@@ -19,8 +26,6 @@ tipButtons.forEach((tipButton) => {
 	tipButton.addEventListener("click", () => {
 		// Changes the styles of the pressed button
 		buttonClickedState(tipButton);
-		// TIP BUTTONS VALUES (I EXTRACT THE CUSTOM VALUE AND NUMBER OF PEOPLE IN THE VALUES.JS FILE)
-		tipValues(tipButton);
 	});
 });
 
@@ -32,4 +37,10 @@ resetButton.addEventListener("click", () => {
 	setTimeout(() => {
 		resetButton.className = "reset-button-normal-state";
 	}, 30);
+});
+
+people.addEventListener("input", () => {
+	tipButtons.forEach((tipButton) => {
+		getValues(tipButton);
+	});
 });

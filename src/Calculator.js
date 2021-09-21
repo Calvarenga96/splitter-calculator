@@ -1,24 +1,24 @@
-import { tipValues } from "./values.js";
-
 export default class Calculator {
-	constructor({ custom, bill, people }) {
+	constructor({ custom, bill, people, tip }) {
+		this.tip = tip;
 		this.custom = custom;
-		this.bill = bill;
+		this.bill = Number(bill);
 		this.people = people;
 	}
 
 	calculateTip() {
-		let tip;
-		if (this.bill) {
-			tip = (this.bill * tipValues) / 100;
+		let totalTip;
+		let tipPerPerson;
+		if (this.tip) {
+			totalTip = (this.bill * this.tip) / 100;
 		}
-		console.log(tip);
+		console.log(totalTip);
 	}
 
 	calculateTotal() {}
 
 	calculate() {
 		this.calculateTip();
-		//this.calculateTotal();
+		this.calculateTotal();
 	}
 }
