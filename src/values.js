@@ -1,16 +1,25 @@
 import Calculator from "./Calculator.js";
 
 const bill = document.querySelector("#bill");
-const custom = document.querySelector("#custom");
 const numberOfPeople = document.querySelector("#people");
 
-function getValues(tipButton) {
+function getValues(tipButton = undefined, custom = undefined) {
 	// I capture the value of the data entered by the user to make the calculations and be able to update while in real time
-	const billValue = bill.value;
-	const customTipValue = custom.value;
-	const numberOfPeopleValue = numberOfPeople.value;
+	const billValue = Number(bill.value);
+	let customTipValue;
+	if (custom === undefined) {
+		customTipValue = undefined;
+	} else {
+		customTipValue = custom;
+	}
+	const numberOfPeopleValue = Number(numberOfPeople.value);
 	// Here I extract the values of the selected button
-	const tipValues = Number(tipButton.value);
+	let tipValues;
+	if (tipButton === undefined) {
+		tipValues = undefined;
+	} else {
+		tipValues = Number(tipButton.value);
+	}
 	// Pass the values to the calculator
 	const calculator = new Calculator({
 		custom: customTipValue,
@@ -19,7 +28,13 @@ function getValues(tipButton) {
 		tip: tipValues,
 	});
 	calculator.calculate();
-	return billValue, numberOfPeopleValue, tipValues;
+	console.log(
+		`Bill Value: ${billValue} --`,
+		`People Value: ${numberOfPeopleValue} --`,
+		`Tip Value: ${tipValues} --`,
+		`Custom Value: ${customTipValue}`
+	);
+	return billValue, numberOfPeopleValue, tipValues, customTipValue;
 }
 
 export { getValues };
