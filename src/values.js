@@ -3,38 +3,25 @@ import Calculator from "./Calculator.js";
 const bill = document.querySelector("#bill");
 const numberOfPeople = document.querySelector("#people");
 
-function getValues(tipButton = undefined, custom = undefined) {
+function getValues(tipButton = null, custom = null) {
 	// I capture the value of the data entered by the user to make the calculations and be able to update while in real time
+
+	let customTipValue, tipValues;
+	// Here I define the value of the custom value
+	!custom ? (customTipValue = null) : (customTipValue = custom);
+	// Here I define the value of the tip value
+	!tipButton ? (tipValues = null) : (tipValues = Number(tipButton.value));
+	// I get the bill and tip values
 	const billValue = Number(bill.value);
-	let customTipValue;
-	if (custom === undefined) {
-		customTipValue = undefined;
-	} else {
-		customTipValue = custom;
-	}
 	const numberOfPeopleValue = Number(numberOfPeople.value);
-	// Here I extract the values of the selected button
-	let tipValues;
-	if (tipButton === undefined) {
-		tipValues = undefined;
-	} else {
-		tipValues = Number(tipButton.value);
-	}
 	// Pass the values to the calculator
 	const calculator = new Calculator({
 		custom: customTipValue,
+		tip: tipValues,
 		bill: billValue,
 		people: numberOfPeopleValue,
-		tip: tipValues,
 	});
 	calculator.calculate();
-	console.log(
-		`Bill Value: ${billValue} --`,
-		`People Value: ${numberOfPeopleValue} --`,
-		`Tip Value: ${tipValues} --`,
-		`Custom Value: ${customTipValue}`
-	);
-	return billValue, numberOfPeopleValue, tipValues, customTipValue;
 }
 
 export { getValues };

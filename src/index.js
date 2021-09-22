@@ -21,16 +21,19 @@ tipButtons.forEach((tipButton) => {
 		// Changes the styles of the pressed button
 		buttonClickedState(tipButton);
 		// Here pass the values of the selected button or custom value
-		getValues(e.target, undefined);
+		people.addEventListener("input", () => {
+			getValues(e.target, null);
+		});
 	});
 });
-people.addEventListener("input", () => {
-	getValues(undefined, Number(custom.value));
+custom.addEventListener("click", () => {
+	people.addEventListener("input", () => {
+		getValues(null, Number(custom.value));
+	});
 });
 
 // RESET BUTTON STATE SECTION
 resetButton.className = "reset-button-normal-state";
-
 resetButton.addEventListener("click", () => {
 	resetButton.className = "reset-button-clicked-state";
 	setTimeout(() => {
