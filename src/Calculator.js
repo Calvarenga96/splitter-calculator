@@ -1,4 +1,4 @@
-import UI from "./Ui.js";
+import UI from "./UI.js";
 
 export default class Calculator {
 	constructor({ custom, bill, people, tip }) {
@@ -18,7 +18,7 @@ export default class Calculator {
 			tip = (this.bill * this.custom) / 100;
 			tipPerPerson = tip / this.people;
 		}
-		return tipPerPerson;
+		return tipPerPerson.toFixed(2);
 	}
 
 	calculateTotal() {
@@ -31,15 +31,16 @@ export default class Calculator {
 			total = (this.bill * this.custom) / 100 + this.bill;
 			totalPerPerson = total / this.people;
 		}
-		return totalPerPerson;
+		return totalPerPerson.toFixed(2);
 	}
 
 	calculate() {
 		this.calculateTip();
 		this.calculateTotal();
 		const ui = new UI({
-			tip: this.calculateTip,
-			total: this.calculateTotal,
+			tip: this.calculateTip(),
+			total: this.calculateTotal(),
+			people: this.people,
 		});
 		ui.render();
 	}

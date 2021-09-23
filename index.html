@@ -1,119 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./assets/images/favicon-32x32.png"
-    />
-    <title>Tip calculator app</title>
-    <link rel="stylesheet" href="./styles/normalize.css" />
-    <link rel="stylesheet" href="./styles/mobile.css" />
-    <link
-      rel="stylesheet"
-      href="./styles/tablet.css"
-      media="screen and (min-width: 426px)"
-    />
-    <link
-      rel="stylesheet"
-      href="./styles/desktop-medium.css"
-      media="screen and (min-width: 769px)"
-    />
-    <link
-      rel="stylesheet"
-      href="./styles/desktop.css"
-      media="screen and (min-width: 1440px)"
-    />
-  </head>
-  <body>
-    <div class="background">
-      <section class="title">
-        <span>SPLI</span>
-        <span>TTER</span>
-      </section>
-      <div class="calculator">
-        <div class="data__container">
-          <section class="calculator__bill">
-            <div class="calculator__bill-container">
-              <label for="bill">Bill</label>
-              <div class="input-container__bill">
-                <div class="dollar-icon"></div>
-                <input
-                  class="input-container__numbers"
-                  type="number"
-                  id="bill"
-                  name="bill"
-                  placeholder="0"
-                  ;
-                />
-              </div>
-            </div>
-          </section>
-          <section class="calculator__tip">
-            <label for="custom">Select Tip %</label>
-            <div class="calculator__tip-buttons">
-              <button id="button-5" type="button" value="5">5%</button>
-              <button id="button-10" type="button" value="10">10%</button>
-              <button id="button-15" type="button" value="15">15%</button>
-              <button id="button-25" type="button" value="25">25%</button>
-              <button id="button-50" type="button" value="50">50%</button>
-              <input
-                class="custom"
-                type="number"
-                id="custom"
-                name="custom"
-                placeholder="Custom"
-              />
-            </div>
-          </section>
-          <section class="calculator__people">
-            <div class="people-text" id="people-text-section">
-              <label for="people">Number of People</label>
-              <span class="no-zero">Can't be zero</span>
-            </div>
-            <div class="input-container__people">
-              <div class="people-icon"></div>
-              <input
-                class="inputContainer__people"
-                type="number"
-                id="people"
-                placeholder="0"
-                ;
-              />
-            </div>
-          </section>
-        </div>
-        <div class="result-container">
-          <section class="calculator__result">
-            <div class="total-container">
-              <div class="tip">
-                <div class="tip__text-section">
-                  <p class="tip-amount-text">Tip Amount</p>
-                  <p class="person">/ person</p>
-                </div>
-                <div>
-                  <p class="mount-person" id="mount-tip"></p>
-                </div>
-              </div>
-              <div class="total">
-                <div class="total__text-section">
-                  <p class="total-text">Total</p>
-                  <p class="person">/ person</p>
-                </div>
-                <div>
-                  <p class="mount-total" id="mount-total">$0.00</p>
-                </div>
-              </div>
-            </div>
-            <button id="reset" type="reset" value="Reset">RESET</button>
-          </section>
-        </div>
-      </div>
-    </div>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./assets/images/favicon-32x32.png"
+		/>
+		<title>Tip calculator app</title>
+		<link rel="stylesheet" href="./styles/normalize.css" />
+		<link rel="stylesheet" href="./styles/mobile.css" />
+		<link
+			rel="stylesheet"
+			href="./styles/tablet.css"
+			media="screen and (min-width: 426px)"
+		/>
+		<link
+			rel="stylesheet"
+			href="./styles/desktop-medium.css"
+			media="screen and (min-width: 769px)"
+		/>
+		<link
+			rel="stylesheet"
+			href="./styles/desktop.css"
+			media="screen and (min-width: 1440px)"
+		/>
+	</head>
+	<body>
+		<div class="background">
+			<section class="title">
+				<span>SPLI</span>
+				<span>TTER</span>
+			</section>
+			<div class="calculator">
+				<div class="data__container">
+					<section class="calculator__bill">
+						<div class="calculator__bill-container">
+							<label for="bill">Bill</label>
+							<div class="input-container__bill">
+								<div class="dollar-icon"></div>
+								<input
+									class="input-container__numbers"
+									type="number"
+									id="bill"
+									name="bill"
+									placeholder="0"
+								/>
+							</div>
+						</div>
+					</section>
+					<section class="calculator__tip">
+						<label for="custom">Select Tip %</label>
+						<div class="calculator__tip-buttons">
+							<button id="button-5" type="button" value="5">5%</button>
+							<button id="button-10" type="button" value="10">10%</button>
+							<button id="button-15" type="button" value="15">15%</button>
+							<button id="button-25" type="button" value="25">25%</button>
+							<button id="button-50" type="button" value="50">50%</button>
+							<input
+								class="custom"
+								type="number"
+								id="custom"
+								name="custom"
+								placeholder="Custom"
+							/>
+						</div>
+					</section>
+					<section class="calculator__people">
+						<div class="people-text" id="people-text-section">
+							<label for="people">Number of People</label>
+							<span class="no-zero" id="zero"></span>
+						</div>
+						<div class="input-container__people">
+							<div class="people-icon"></div>
+							<input
+								class="inputContainer__people"
+								type="number"
+								id="people"
+								placeholder="0"
+							/>
+						</div>
+					</section>
+				</div>
+				<div class="result-container">
+					<section class="calculator__result">
+						<div class="total-container">
+							<div class="tip">
+								<div class="tip__text-section">
+									<p class="tip-amount-text">Tip Amount</p>
+									<p class="person">/ person</p>
+								</div>
+								<div>
+									<p class="mount-person" id="mount-tip">$0.00</p>
+								</div>
+							</div>
+							<div class="total">
+								<div class="total__text-section">
+									<p class="total-text">Total</p>
+									<p class="person">/ person</p>
+								</div>
+								<div>
+									<p class="mount-total" id="mount-total">$0.00</p>
+								</div>
+							</div>
+						</div>
+						<button id="reset" type="reset" value="Reset">RESET</button>
+					</section>
+				</div>
+			</div>
+		</div>
 
-    <script src="./src/index.js" type="module"></script>
-  </body>
+		<script src="./src/index.js" type="module"></script>
+	</body>
 </html>

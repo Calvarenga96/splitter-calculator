@@ -1,5 +1,6 @@
 import { buttonNormalState, buttonClickedState } from "./buttonsStates.js";
 import { getValues } from "./values.js";
+import UI from "./UI.js";
 
 const button5 = document.querySelector("#button-5");
 const button10 = document.querySelector("#button-10");
