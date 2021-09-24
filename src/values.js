@@ -1,27 +1,57 @@
 import Calculator from "./Calculator.js";
+import UI from "./UI.js";
 
-const bill = document.querySelector("#bill");
-const numberOfPeople = document.querySelector("#people");
+export default class Values {
+	constructor({ bill, tipButtons, custom, people }) {
+		this.bill = bill;
+		this.tipButtons = tipButtons;
+		this.custom = custom;
+		this.people = people;
+		this.tip;
+	}
 
-function getValues(tipButton = null, custom = null) {
-	// I capture the value of the data entered by the user to make the calculations and be able to update while in real time
+	tipFilter(tip, event) {
+		if (event === "click") {
+			this.tip = Number(tip.value);
+		} else if (event === "input") {
+			this.tip = Number(tip.value);
+		}
+		return this.tip;
+	}
 
-	let customTipValue, tipValues;
-	// Here I define the value of the custom value
-	!custom ? (customTipValue = null) : (customTipValue = custom);
-	// Here I define the value of the tip value
-	!tipButton ? (tipValues = null) : (tipValues = Number(tipButton.value));
-	// I get the bill and tip values
-	const billValue = Number(bill.value);
-	const numberOfPeopleValue = Number(numberOfPeople.value);
-	// Pass the values to the calculator
-	const calculator = new Calculator({
-		custom: customTipValue,
-		tip: tipValues,
-		bill: billValue,
-		people: numberOfPeopleValue,
-	});
-	calculator.calculate();
+	tipValue() {
+		let tipValue = this.tip;
+		return tipValue;
+	}
+
+	billValue() {
+		let billValue = Number(this.bill.value);
+		return billValue;
+	}
+
+	peopleQuantity() {
+		let peopleQuantity = Number(this.people.value);
+		if (peopleQuantity === 0) {
+			UI.messageNoZero();
+		} else if (peopleQuantity > 0) {
+			UI.noMessage();
+		}
+		return peopleQuantity;
+	}
+
+	getValues() {
+		this.tipValue();
+		this.billValue();
+		this.peopleQuantity();
+		this.passValuesToCalculator();
+	}
+
+	passValuesToCalculator() {
+		const calculator = new Calculator({
+			bill: this.billValue(),
+			people: this.peopleQuantity(),
+			tip: this.tipValue(),
+		});
+		calculator.calculate();
+	}
 }
-
-export { getValues };
