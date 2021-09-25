@@ -11,20 +11,12 @@ export default class UI {
 
 	renderTip() {
 		const renderTip = document.querySelector("#mount-tip");
-		if (!this.tip || this.tip === Infinity) {
-			renderTip.textContent = "$0.00";
-		} else if (this.tip || this.tip !== Infinity) {
-			renderTip.textContent = `$${this.tip}`;
-		}
+		renderTip.innerText = `$${this.tip}`;
 	}
 
 	renderTotal() {
 		const renderTotal = document.querySelector("#mount-total");
-		if (!this.total || this.tip === Infinity) {
-			renderTotal.textContent = "$0.00";
-		} else {
-			renderTotal.textContent = `$${this.total}`;
-		}
+		renderTotal.innerText = `$${this.total}`;
 	}
 
 	static messageNoZero() {
@@ -34,6 +26,6 @@ export default class UI {
 
 	static noMessage() {
 		const message = document.querySelector("#zero");
-		message.textContent = "";
+		message.innerText = "";
 	}
 }

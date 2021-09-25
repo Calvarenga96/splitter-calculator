@@ -1,79 +1,79 @@
 .background {
-  height: 100%;
-  justify-content: center;
-  align-items: center;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
 }
 
 .background .title {
-  margin: 0 0 100px;
+	margin: 0 0 100px;
 }
 
 .calculator {
-  flex-direction: row;
-  width: 60%;
-  height: 500px;
-  padding: 35px;
-  border-radius: 30px;
-  -webkit-box-shadow: 0px 0px 45px -12px rgba(0, 0, 0, 0.54);
-  -moz-box-shadow: 0px 0px 45px -12px rgba(0, 0, 0, 0.54);
-  box-shadow: 0px 0px 45px -12px rgba(0, 0, 0, 0.54);
+	flex-direction: row;
+	width: 60%;
+	height: 500px;
+	padding: 35px;
+	border-radius: 30px;
+	-webkit-box-shadow: 0px 0px 45px -12px rgba(0, 0, 0, 0.54);
+	-moz-box-shadow: 0px 0px 45px -12px rgba(0, 0, 0, 0.54);
+	box-shadow: 0px 0px 45px -12px rgba(0, 0, 0, 0.54);
 }
 
 .data__container {
-  margin-right: 30px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+	margin-right: 30px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 .result-container {
-  margin-left: 30px;
-  height: 100%;
+	margin-left: 30px;
+	height: 100%;
 }
 
 .calculator__result {
-  height: 100%;
-  margin: 0;
-  padding: 40px;
-  padding-top: 25px;
-  display: flex;
-  justify-content: space-between;
+	height: 100%;
+	margin: 0;
+	padding: 40px;
+	padding-top: 25px;
+	display: flex;
+	justify-content: space-between;
 }
 
 .calculator__tip-buttons button {
-  padding: 0;
-  text-align: center;
+	padding: 0;
+	text-align: center;
 }
 
 .calculator__tip-buttons input {
-  text-align: right;
+	text-align: right;
 }
 
 .calculator__tip-buttons input::-webkit-input-placeholder {
-  text-align: right;
+	text-align: right;
 }
 
 .mount-person,
 .mount-total {
-  font-size: 3.6rem;
+	font-size: 3.6rem;
 }
 
 .inputContainer__people,
 .input-container__numbers {
-  padding-right: 10px;
+	padding-right: 10px;
 }
 
 .no-zero {
-  font-size: 1.5rem;
+	font-size: 1.5rem;
 }
 
 .calculator__tip-buttons {
-  grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(3, 1fr);
 }
 
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+	-webkit-appearance: none;
+	margin: 0;
 }

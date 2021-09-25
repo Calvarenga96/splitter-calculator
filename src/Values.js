@@ -1,5 +1,4 @@
 import Calculator from "./Calculator.js";
-import UI from "./UI.js";
 
 export default class Values {
 	constructor({ bill, tipButtons, custom, people }) {
@@ -9,6 +8,7 @@ export default class Values {
 		this.people = people;
 		this.tip;
 	}
+
 	tipFilter(tip, event) {
 		if (event === "click") {
 			this.tip = Number(tip.value);
@@ -17,25 +17,22 @@ export default class Values {
 		}
 		return this.tip;
 	}
-	tipValue() {
-		let tipValue = this.tip;
-		return tipValue;
-	}
 
 	billValue() {
 		let billValue = Number(this.bill.value);
 		return billValue;
 	}
 
+	tipValue() {
+		let tipValue = this.tip;
+		return tipValue;
+	}
+
 	peopleQuantity() {
 		let peopleQuantity = Number(this.people.value);
-		if (peopleQuantity === 0) {
-			UI.messageNoZero();
-		} else if (peopleQuantity > 0) {
-			UI.noMessage();
-		}
 		return peopleQuantity;
 	}
+
 	getValues() {
 		this.tipValue();
 		this.billValue();

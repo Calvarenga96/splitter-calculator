@@ -1,5 +1,6 @@
 import { buttonNormalState, buttonClickedState } from "./buttonsStates.js";
 import Values from "./Values.js";
+import UI from "./UI.js";
 
 const button5 = document.querySelector("#button-5");
 const button10 = document.querySelector("#button-10");
@@ -10,9 +11,15 @@ const custom = document.querySelector("#custom");
 const resetButton = document.querySelector("#reset");
 const bill = document.querySelector("#bill");
 const people = document.querySelector("#people");
-const dataSection = document.querySelector(".data__container");
 
 const tipButtons = [button5, button10, button15, button25, button50];
+
+let values = new Values({
+	bill,
+	tipButtons,
+	custom,
+	people,
+});
 
 // TIP BUTTONS STATE SECTION AND FILTERING THE TIP
 tipButtons.forEach((tipButton) => {
@@ -41,13 +48,6 @@ resetButton.addEventListener("mouseup", () => {
 	resetButton.className = "reset-button-normal-state";
 });
 
-const values = new Values({
-	bill,
-	tipButtons,
-	custom,
-	people,
-});
-
 // CAPTURE THE VALUES FOR EACH EVENT
 bill.addEventListener("input", () => {
 	values.getValues();
@@ -62,6 +62,18 @@ custom.addEventListener("input", () => {
 });
 people.addEventListener("input", () => {
 	values.getValues();
+	if (people.value === "" || people.value === "0") {
+		UI.messageNoZero();
+	} else {
+		UI.noMessage();
+	}
+});
+
+// RESET BUTTON FUNCTION
+resetButton.addEventListener("click", () => {
+	tipButtons.forEach((tipButton) => {
+		buttonNormalState(tipButton);
+	});
 });
 
 export { tipButtons };
