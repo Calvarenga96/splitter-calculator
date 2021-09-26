@@ -29,12 +29,11 @@ tipButtons.forEach((tipButton) => {
 		// Changes the styles of the pressed button
 		buttonClickedState(tipButton);
 		values.tipFilter(tipButton, e.type);
+		custom.value = "";
 	});
 	//If you click inside the custom area, the selected button is deselected
-	custom.addEventListener("click", () => {
-		buttonNormalState(tipButton);
-	});
 	custom.addEventListener("input", (e) => {
+		buttonNormalState(tipButton);
 		values.tipFilter(custom, e.type);
 	});
 });

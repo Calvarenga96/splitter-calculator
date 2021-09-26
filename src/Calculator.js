@@ -39,5 +39,9 @@ export default class Calculator {
 			total: this.calculateTotal(),
 		});
 		ui.render();
+		const resetButton = document.querySelector("#reset");
+		resetButton.addEventListener("click", () => {
+			ui.resetButton();
+		});
 	}
 }

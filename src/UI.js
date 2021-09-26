@@ -19,6 +19,12 @@ export default class UI {
 		renderTotal.innerText = `$${this.total}`;
 	}
 
+	resetButton() {
+		this.tip = "0.00";
+		this.total = "0.00";
+		this.render();
+	}
+
 	static messageNoZero() {
 		const message = document.querySelector("#zero");
 		message.textContent = "Can't be zero";
